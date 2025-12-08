@@ -1,0 +1,3 @@
+# Claude Code Instructions
+
+See [cursor_claude_rules.md](cursor_claude_rules.md) for the full rules and conventions for this project.
