@@ -8,7 +8,7 @@ These rules govern how all code should be written, reviewed, and generated in Cu
 - **React 19** - With React Compiler 1.0
 - **Tailwind CSS 4** - Utility-first styling
 - **TypeScript 5** - Strict type safety
-- **Prisma 6** - Database ORM
+- **Prisma 7** - Database ORM
 - **Better Auth 1** - Authentication with database sessions
 - **React Query** - Server state management
 - **react-hook-form** - Form handling
@@ -605,8 +605,7 @@ Example `.env`:
 
 ```
 DATABASE_URL=postgresql://...
-NEXTAUTH_SECRET=XXX
-NEXTAUTH_URL=http://localhost:3000
+AUTH_SECRET=XXX
 ```
 
 ## 15. Accessibility
@@ -804,6 +803,6 @@ When providing code changes:
 
 # End of Rules File
 
-**Version**: 1.0  
-**Last Updated**: December 2025  
+**Version**: 1.0
+**Last Updated**: December 2025
 **Maintained by**: Development Team
