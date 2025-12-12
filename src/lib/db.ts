@@ -1,3 +1,4 @@
+// Prevent multiple database connections during Next.js development hot reloads
 import { PrismaClient } from "@/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 
