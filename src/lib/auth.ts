@@ -11,6 +11,14 @@ export const auth = betterAuth({
   database: prismaAdapter(db, {
     provider: 'postgresql',
   }),
+  user: {
+    additionalFields: {
+      role: {
+        type: 'string',
+        defaultValue: 'USER',
+      },
+    },
+  },
   // TODO: If adding password authentication to production, add change password functionality, add forgot password functionality, and add email verification functionality.
   emailAndPassword: {
     enabled: true,

@@ -28,6 +28,7 @@ export default async function Home() {
         )}
         <div>
           <p className="text-xl font-semibold">{session.user.name}</p>
+          <p className="text-gray-400">Role: {session.user.role}</p>
           <p className="text-gray-400">{session.user.email}</p>
           <p className="text-sm text-gray-400">ID: {session.user.id}</p>
         </div>

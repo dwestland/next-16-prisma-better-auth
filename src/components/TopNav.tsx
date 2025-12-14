@@ -25,6 +25,9 @@ export async function TopNav() {
             <Link href="/user" className="text-gray-700 hover:text-gray-900">
               User
             </Link>
+            <Link href="/admin" className="text-gray-700 hover:text-gray-900">
+              Admin
+            </Link>
           </div>
           <div className="flex items-center gap-4">
             {session ? (
