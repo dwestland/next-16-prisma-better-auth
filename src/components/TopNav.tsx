@@ -13,10 +13,7 @@ export async function TopNav() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-8">
-            <Link
-              href="/"
-              className="text-gray-700 hover:text-gray-900"
-            >
+            <Link href="/" className="text-gray-700 hover:text-gray-900">
               Home
             </Link>
             <Link
@@ -24,6 +21,9 @@ export async function TopNav() {
               className="text-gray-700 hover:text-gray-900"
             >
               Messages
+            </Link>
+            <Link href="/user" className="text-gray-700 hover:text-gray-900">
+              User
             </Link>
           </div>
           <div className="flex items-center gap-4">

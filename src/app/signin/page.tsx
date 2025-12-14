@@ -28,6 +28,15 @@ export default function SignInPage() {
         >
           Sign In
         </button>
+        <span className="text-sm text-left py-0">
+          Don&apos;t have an account?{' '}
+          <a
+            href="/signup"
+            className="text-sm text-blue-600 hover:underline cursor-pointer"
+          >
+            Sign up here
+          </a>
+        </span>
       </form>
       <div className="flex w-64 items-center gap-3">
         <div className="h-px flex-1 bg-gray-400" />
