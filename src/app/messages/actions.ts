@@ -1,26 +1,26 @@
-"use server";
+'use server'
 
-import { z } from "zod";
-import { Resend } from "resend";
-import { db } from "@/lib/db";
+import { z, ZodError } from 'zod'
+import { Resend } from 'resend'
+import { db } from '@/lib/db'
 
 const messageSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  email: z.string().email("Invalid email"),
-  message: z.string().min(1, "Message is required"),
-});
+  name: z.string().min(1, 'Name is required'),
+  email: z.email({ message: 'Invalid email' }),
+  message: z.string().min(1, 'Message is required'),
+})
 
-type MessageInput = z.infer<typeof messageSchema>;
+type MessageInput = z.infer<typeof messageSchema>
 
 export async function sendMessage(input: MessageInput) {
   try {
-    const validated = messageSchema.parse(input);
+    const validated = messageSchema.parse(input)
 
-    const resend = new Resend(process.env.AUTH_RESEND_KEY);
+    const resend = new Resend(process.env.RESEND_API_KEY)
 
     await resend.emails.send({
-      from: process.env.AUTH_RESEND_FROM!,
-      to: process.env.AUTH_RESEND_FROM!,
+      from: process.env.RESEND_FROM!,
+      to: process.env.RESEND_FROM!,
       subject: `New message from ${validated.name}`,
       html: `
         <h2>New Contact Message</h2>
@@ -29,7 +29,7 @@ export async function sendMessage(input: MessageInput) {
         <p><strong>Message:</strong></p>
         <p>${validated.message}</p>
       `,
-    });
+    })
 
     await db.message.create({
       data: {
@@ -37,14 +37,14 @@ export async function sendMessage(input: MessageInput) {
         email: validated.email,
         message: validated.message,
       },
-    });
+    })
 
-    return { success: true };
+    return { success: true }
   } catch (error) {
-    console.error("[sendMessage]", error);
-    if (error instanceof z.ZodError) {
-      return { success: false, error: error.errors[0].message };
+    console.error('[sendMessage]', error)
+    if (error instanceof ZodError) {
+      return { success: false, error: error.issues[0].message }
     }
-    return { success: false, error: "Failed to send message" };
+    return { success: false, error: 'Failed to send message' }
   }
 }
