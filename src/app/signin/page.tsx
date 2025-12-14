@@ -1,5 +1,6 @@
 import { signInAction } from '../actions/auth'
 import { GitHubSignInButton } from './GitHubSignInButton'
+import { GoogleSignInButton } from './GoogleSignInButton'
 
 export default function SignInPage() {
   return (
@@ -32,7 +33,8 @@ export default function SignInPage() {
         <span className="text-sm text-gray-500">or</span>
         <div className="h-px flex-1 bg-gray-300" />
       </div>
-      <div className="w-64">
+      <div className="flex w-64 flex-col gap-2">
+        <GoogleSignInButton />
         <GitHubSignInButton />
       </div>
     </div>
