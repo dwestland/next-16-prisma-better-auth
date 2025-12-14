@@ -1,6 +1,7 @@
 import { signUpAction } from '../actions/auth'
 import { GitHubSignUpButton } from './GitHubSignUpButton'
 import { GoogleSignUpButton } from './GoogleSignUpButton'
+import { MagicLinkSignUp } from './MagicLinkSignUp'
 
 export default function SignUpPage() {
   return (
@@ -36,14 +37,20 @@ export default function SignUpPage() {
         </button>
       </form>
       <div className="flex w-64 items-center gap-3">
-        <div className="h-px flex-1 bg-gray-300" />
-        <span className="text-sm text-gray-500">or</span>
-        <div className="h-px flex-1 bg-gray-300" />
+        <div className="h-px flex-1 bg-gray-400" />
+        <span className="text-sm">or</span>
+        <div className="h-px flex-1 bg-gray-400" />
       </div>
       <div className="flex w-64 flex-col gap-2">
         <GoogleSignUpButton />
         <GitHubSignUpButton />
       </div>
+      <div className="flex w-64 items-center gap-3">
+        <div className="h-px flex-1 bg-gray-400" />
+        <span className="text-sm">or use your email</span>
+        <div className="h-px flex-1 bg-gray-400" />
+      </div>
+      <MagicLinkSignUp />
     </div>
   )
 }

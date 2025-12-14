@@ -1,4 +1,5 @@
 import { createAuthClient } from 'better-auth/react'
+import { magicLinkClient } from 'better-auth/client/plugins'
 
 // Get base URL from environment variable or detect from browser
 const getBaseURL = () => {
@@ -18,4 +19,5 @@ const getBaseURL = () => {
 export const authClient = createAuthClient({
   /** The base URL of the server (optional if you're using the same domain) */
   baseURL: getBaseURL(),
+  plugins: [magicLinkClient()],
 })

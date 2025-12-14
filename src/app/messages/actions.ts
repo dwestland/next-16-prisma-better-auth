@@ -19,8 +19,8 @@ export async function sendMessage(input: MessageInput) {
     const resend = new Resend(process.env.RESEND_API_KEY)
 
     await resend.emails.send({
-      from: process.env.RESEND_FROM!,
-      to: process.env.RESEND_FROM!,
+      from: process.env.EMAIL_FROM!,
+      to: process.env.EMAIL_FROM!,
       subject: `New message from ${validated.name}`,
       html: `
         <h2>New Contact Message</h2>
