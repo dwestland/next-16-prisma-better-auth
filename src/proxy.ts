@@ -13,7 +13,10 @@ export function proxy(request: NextRequest) {
 
   if (isProtectedRoute) {
     // Check for Better Auth session cookie
-    const sessionCookie = request.cookies.get('better-auth.session_token')
+    // Production uses __Secure- prefix, development uses plain name
+    const sessionCookie =
+      request.cookies.get('__Secure-better-auth.session_token') ||
+      request.cookies.get('better-auth.session_token')
 
     if (!sessionCookie) {
       // Redirect to sign-in with return URL
