@@ -55,7 +55,7 @@ This repository serves as scaffolding for new projects that require a robust aut
 2. **Install dependencies**
 
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. **Set up environment variables**
@@ -107,7 +107,7 @@ This repository serves as scaffolding for new projects that require a robust aut
 1. **Start the development server**
 
    ```bash
-   npm run dev
+   pnpm dev
    ```
 
 2. **Open your browser**

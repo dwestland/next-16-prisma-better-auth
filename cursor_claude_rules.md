@@ -596,8 +596,8 @@ export type ApiResponse<T> = ApiSuccess<T> | ApiError;
 - Store secrets only in `.env` (local) and Vercel environment variables (production).
 - Code must run on Vercel, AWS, or Netlify without modification.
 - Use Sentry or equivalent for error logging in production.
-- Run `npm audit` regularly and address vulnerabilities.
-- Test builds locally with `npm run build` before deploying.
+- Run `pnpm audit` regularly and address vulnerabilities.
+- Test builds locally with `pnpm build` before deploying.
 - Configure proper caching strategies in `next.config.ts`.
 - Use Vercel Analytics or similar for performance monitoring.
 
